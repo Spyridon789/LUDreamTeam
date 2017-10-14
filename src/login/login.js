@@ -6,7 +6,6 @@ import { Configs } from '../configs';
 class Login extends Component {
   constructor(props) {
     super(props);
-
     this.onLogin = this.onLogin.bind(this);
   }
 
@@ -20,7 +19,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.onLogin}>Sign in with your Microsoft account</button>
+        <button onClick={this.onLogin}>MS Sign In</button>
       </div>
     );
   }
