@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import hello from 'hellojs/dist/hello.all.js';
-
 import registerServiceWorker from './registerServiceWorker';
 import Login from './login/login';
 import Home from './home/home';
@@ -30,7 +29,6 @@ ReactDOM.render(
             <Route path='/home' component={Home}/>
         </Switch>
     </BrowserRouter>,
-
     document.getElementById('root')
 );
 
