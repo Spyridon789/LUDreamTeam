@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import hello from 'hellojs/dist/hello.all.js';
-
 import { Configs } from '../configs';
 
 class Login extends Component {
@@ -19,7 +18,8 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.onLogin}>MS Sign In</button>
+        <div align = "center"> <h3>Welcome to your Chatterbug! </h3></div>
+        <button onClick={this.onLogin} align="center" >Sign in with your LU Mail</button>
       </div>
     );
   }

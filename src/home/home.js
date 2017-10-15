@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import hello from 'hellojs/dist/hello.all.js';
+
 import axios from 'axios';
 
 class Home extends Component {
@@ -21,11 +22,11 @@ class Home extends Component {
     const { token } = this.state;
 
     axios.get(
-      'https://graph.microsoft.com/v1.0/me/givenName/$value',
+      'https://graph.microsoft.com/v1.0/me',
       { headers: { Authorization: `Bearer ${token}` }}
     ).then(res => {
-      const username = res.data;
-      this.setState({ username });
+      const user = res.data;
+      this.setState({ user });
     });
 }
 
@@ -36,14 +37,23 @@ class Home extends Component {
     );
   }
 
-  render() {
-    const { username } = this.state;
-    return (
-      <div>
-        <div>{username}</div>
-        <button onClick={this.onLogout}>Logout</button>
-      </div>
-    );
+  render() { 
+    const { user } = this.state; 
+    return ( 
+        <div> 
+          {user &&
+          <div>
+            <div> Welcome back, {user.givenName}!</div>
+            <div> Logged in as {user.mail}!</div>
+          </div>
+          }
+          
+
+          <div> <i> Not you? </i> </div> 
+        <button onClick={this.onLogout}>Logout</button> 
+      </div> 
+      ); 
+
   }
 }
 
