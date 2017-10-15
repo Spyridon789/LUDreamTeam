@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import hello from 'hellojs/dist/hello.all.js';
 import axios from 'axios';
+import Chat from './chat';
 
 class Home extends Component {
   constructor(props) {
     super(props);
-
-    debugger;
     const msft = hello('msft').getAuthResponse();
 
     this.state = {
@@ -36,13 +35,30 @@ class Home extends Component {
     );
   }
 
+  appendRow() {
+    var table = document.getElementById("table");
+    table.appendChild(document.createElement("tr"));
+    table.appendChild(document.createElement("td"));
+    table.appendChild(document.createElement("td"));
+    table.appendChild(document.createElement("td"));
+  }
+
   render() {
     const { username } = this.state;
     return (
       <div>
-        <div>{username}</div>
+        <div>Welcoome, {username}!</div>
         <button onClick={this.onLogout}>Logout</button>
+        <button onClick={this.appendRow}>Chat</button>
+        <table id="table" border="1">
+          <tr>
+            <th>Name</th>
+            <th>Message</th>
+            <th>Time</th>
+          </tr>
+        </table>
       </div>
+      
     );
   }
 }

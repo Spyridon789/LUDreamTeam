@@ -5,6 +5,7 @@ import hello from 'hellojs/dist/hello.all.js';
 import registerServiceWorker from './registerServiceWorker';
 import Login from './login/login';
 import Home from './home/home';
+import Chat from './home/chat';
 import { Configs } from './configs';
 import './index.css';
 
@@ -27,6 +28,7 @@ ReactDOM.render(
         <Switch>
             <Route exact path='/' component={Login}/>
             <Route path='/home' component={Home}/>
+            <Route path='/home/chat' component={Chat}/>
         </Switch>
     </BrowserRouter>,
     document.getElementById('root')
